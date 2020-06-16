@@ -1,0 +1,2508 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Asignaciones",
+        "contact": {
+            "email": "antony.rodriguez@mimco.com.pe"
+        },
+        "version": "1"
+    },
+    "paths": {
+        "/Asignaciones/public/index.php/vali_OT": {
+            "post": {
+                "tags": [
+                    "Asignacion"
+                ],
+                "summary": "obtiene datos del usuario a través del dni",
+                "operationId": "App\\Http\\Controllers\\AsignacionController::vali_OT",
+                "parameters": [
+                    {
+                        "name": "varCodiProy",
+                        "in": "path",
+                        "description": "Ingresar la OT",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "19-0071PI"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "Exitoso varCodiProy": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "varCodiProy": "19-0071PI"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Sin Mensaje"
+                    },
+                    "203": {
+                        "description": "Error."
+                    },
+                    "404": {
+                        "description": "No se encuentra el metodo"
+                    }
+                }
+            }
+        },
+        "/Asignaciones/public/index.php/obte_tipo_prod": {
+            "post": {
+                "tags": [
+                    "Asignacion"
+                ],
+                "summary": "obtiene datos del usuario a través del dni",
+                "parameters": [
+                    {
+                        "name": "varCodiProy",
+                        "in": "path",
+                        "description": "Ingrese el codigo del proyecto",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "19-0071PI"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "varCodiProy": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "varCodiProy": "19-0071PI"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "CODIGO OT  NO EXISTE"
+                    },
+                    "201": {
+                        "description": "CODIGO OT NO CUENTA CON PRODUCTOS ASOCIADOS."
+                    },
+                    "404": {
+                        "description": "No se encuentra el metodo"
+                    }
+                }
+            }
+        },
+        "/Asignaciones/public/index.php/mostr_asig_etap": {
+            "post": {
+                "tags": [
+                    "Asignacion"
+                ],
+                "summary": "Mostrar la etapa en la asignacion",
+                "operationId": "App\\Http\\Controllers\\AsignacionController::mostr_asig_etap",
+                "parameters": [
+                    {
+                        "name": "intIdProy",
+                        "in": "path",
+                        "description": "Ingrese el ID del proyecto",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "126"
+                    },
+                    {
+                        "name": "intIdTipoProducto",
+                        "in": "path",
+                        "description": "Ingrese el ID del tipo producto",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "intIdProy": {
+                                        "type": "string"
+                                    },
+                                    "intIdTipoProducto": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "intIdProy": "126",
+                                    "intIdTipoProducto": "1"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "MUESTRA LAS ASIGNACIONES DE LAS ETAPA"
+                    },
+                    "404": {
+                        "description": "No se encuentra el metodo"
+                    }
+                }
+            }
+        },
+        "/Asignaciones/public/index.php/asig_etap_proy": {
+            "post": {
+                "tags": [
+                    "Asignacion"
+                ],
+                "summary": "Obtener los asignar etapa",
+                "operationId": "App\\Http\\Controllers\\AsignacionController::asig_etap_proy",
+                "parameters": [
+                    {
+                        "name": "varCodiProy",
+                        "in": "path",
+                        "description": "Ingrese el ID del proyecto",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "19-0071PI"
+                    },
+                    {
+                        "name": "intIdTipoProducto",
+                        "in": "path",
+                        "description": "Ingrese el ID del tipo producto",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "varCodiProy": {
+                                        "type": "string"
+                                    },
+                                    "intIdTipoProducto": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "varCodiProy": "19-0071PI",
+                                    "intIdTipoProducto": "1"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OBTENER LOS  ASIGNAR ETAPA "
+                    },
+                    "404": {
+                        "description": "No se encuentra el metodo"
+                    }
+                }
+            }
+        },
+        "/Asignaciones/public/index.php/regi_asig_etap": {
+            "post": {
+                "tags": [
+                    "Asignacion"
+                ],
+                "summary": "Registrar  el asignar etapa ",
+                "operationId": "App\\Http\\Controllers\\AsignacionController::regi_asig_etap",
+                "parameters": [
+                    {
+                        "name": "varCodiOt",
+                        "in": "path",
+                        "description": "Ingrese el codigo de la OT",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "0073099"
+                    },
+                    {
+                        "name": "intIdTipoProducto",
+                        "in": "path",
+                        "description": "Ingrese el ID del tipo producto",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "1"
+                    },
+                    {
+                        "name": "intOrden",
+                        "in": "path",
+                        "description": "Ingrese el id orden",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "1"
+                    },
+                    {
+                        "name": "intIdEtapa",
+                        "in": "path",
+                        "description": "Ingrese el id etapa",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "4"
+                    },
+                    {
+                        "name": "acti_usua",
+                        "in": "path",
+                        "description": "Ingrese el usuario que va realizar el registrado",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "jose_usaurio"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "varCodiProy": {
+                                        "type": "string"
+                                    },
+                                    "intIdTipoProducto": {
+                                        "type": "string"
+                                    },
+                                    "intOrden": {
+                                        "type": "string"
+                                    },
+                                    "intIdEtapa": {
+                                        "type": "string"
+                                    },
+                                    "acti_usua": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "varCodiOt": "19-0071PI",
+                                    "intIdTipoProducto": "1",
+                                    "intOrden": "1",
+                                    "intIdEtapa": "4",
+                                    "acti_usua": "usuario"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Registrar  el asignar etapa"
+                    },
+                    "404": {
+                        "description": "No se encuentra el metodo"
+                    }
+                }
+            }
+        },
+        "/Asignaciones/public/index.php/regi_otra_inte": {
+            "post": {
+                "tags": [
+                    "Asignacion"
+                ],
+                "summary": "obtener laotra interfaces  el asignar etapa ",
+                "operationId": "App\\Http\\Controllers\\AsignacionController::regi_otra_inte",
+                "parameters": [
+                    {
+                        "name": "varCodiOt",
+                        "in": "path",
+                        "description": "Ingrese el codigo de la OT",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "0073099"
+                    },
+                    {
+                        "name": "intIdTipoProducto",
+                        "in": "path",
+                        "description": "Ingrese el ID del tipo producto",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "1"
+                    },
+                    {
+                        "name": "intIdEtapa",
+                        "in": "path",
+                        "description": "Ingrese el id de la etapa",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "4"
+                    },
+                    {
+                        "name": "acti_usua",
+                        "in": "path",
+                        "description": "Ingrese el usuario que va realizar el registrado",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "jose_usaurio"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "varCodiOt": {
+                                        "type": "string"
+                                    },
+                                    "intIdTipoProducto": {
+                                        "type": "string"
+                                    },
+                                    "intIdEtapa": {
+                                        "type": "string"
+                                    },
+                                    "acti_usua": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "varCodiOt": "0073099",
+                                    "intIdTipoProducto": "1",
+                                    "intIdEtapa": "4",
+                                    "acti_usua": "jose_usaurio"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Registrar  el asignar etapa"
+                    },
+                    "404": {
+                        "description": "No se encuentra el metodo"
+                    }
+                }
+            }
+        },
+        "/Asignaciones/public/index.php/actu_asig_etapa": {
+            "post": {
+                "tags": [
+                    "Asignacion"
+                ],
+                "summary": "Actualizar asignacion etapa",
+                "operationId": "App\\Http\\Controllers\\AsignacionController::actu_asig_etapa",
+                "parameters": [
+                    {
+                        "name": "intIdAsigEtapProy",
+                        "in": "path",
+                        "description": "ingrese el id de asignar etapa proyecto",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "100"
+                    },
+                    {
+                        "name": "varCodiOt",
+                        "in": "path",
+                        "description": "Ingrese el codigo de la OT",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "0073099"
+                    },
+                    {
+                        "name": "intIdTipoProducto",
+                        "in": "path",
+                        "description": "Ingrese el id tipo producto",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "1"
+                    },
+                    {
+                        "name": "intOrden",
+                        "in": "path",
+                        "description": "Ingrese el id de la orden",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "120"
+                    },
+                    {
+                        "name": "usua_modi",
+                        "in": "path",
+                        "description": "Ingrese el usuario",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "usuario_usuario"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "intIdAsigEtapProy": {
+                                        "type": "string"
+                                    },
+                                    "varCodiOt": {
+                                        "type": "string"
+                                    },
+                                    "intIdTipoProducto": {
+                                        "type": "string"
+                                    },
+                                    "intOrden": {
+                                        "type": "string"
+                                    },
+                                    "usua_modi": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "intIdAsigEtapProy": "100",
+                                    "varCodiOt": "0073099",
+                                    "intIdTipoProducto": "1",
+                                    "intOrden": "120",
+                                    "usua_modi": "usuario_usuario"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Actualizar la etapa asignada"
+                    },
+                    "407": {
+                        "description": "El Documento de identidad ingresado no se encuentra registrado."
+                    },
+                    "404": {
+                        "description": "No se encuentra el metodo"
+                    }
+                }
+            }
+        },
+        "/Asignaciones/public/index.php/elim_asig_etap": {
+            "post": {
+                "tags": [
+                    "Asignacion"
+                ],
+                "summary": "Eliminar la asignacion de la etapa",
+                "operationId": "App\\Http\\Controllers\\AsignacionController::elim_asig_etap",
+                "parameters": [
+                    {
+                        "name": "intIdAsigEtapProy",
+                        "in": "path",
+                        "description": "ingrese el id de asignar proyecto",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "100"
+                    },
+                    {
+                        "name": "intIdProy",
+                        "in": "path",
+                        "description": "ingrese el id del proyecto",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "126"
+                    },
+                    {
+                        "name": "intIdTipoProducto",
+                        "in": "path",
+                        "description": "Ingrese el id tipo producto",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "1020"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "intIdAsigEtapProy": {
+                                        "type": "string"
+                                    },
+                                    "intIdProy": {
+                                        "type": "string"
+                                    },
+                                    "intIdTipoProducto": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "intIdAsigEtapProy": "100",
+                                    "intIdProy": "126",
+                                    "intIdTipoProducto": "1020"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "('') quiere decir que asido exitoso."
+                    },
+                    "201": {
+                        "description": "No se puede eliminar. Ya que esta asignado a una ruta"
+                    },
+                    "407": {
+                        "description": "El Documento de identidad ingresado no se encuentra registrado."
+                    },
+                    "404": {
+                        "description": "No se encuentra el metodo"
+                    }
+                }
+            }
+        },
+        "/Asignaciones/public/index.php/obte_cont_con_id_etap": {
+            "post": {
+                "tags": [
+                    "Asignacion"
+                ],
+                "summary": "obtener contratista mediante el idEtapa",
+                "operationId": "App\\Http\\Controllers\\AsignacionController::obte_cont_con_id_etap",
+                "parameters": [
+                    {
+                        "name": "intIdEtapa",
+                        "in": "path",
+                        "description": "Ingrese el id etapa",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "5"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "intIdEtapa": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "intIdEtapa": "5"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "lista el contratista que tiene esa etapa"
+                    },
+                    "404": {
+                        "description": "No se encuentra el metodo"
+                    }
+                }
+            }
+        },
+        "/Asignaciones/public/index.php/obte_supe_con_id_etap": {
+            "post": {
+                "tags": [
+                    "Asignacion"
+                ],
+                "summary": "obtener colaborador mediante el idEtapa",
+                "operationId": "App\\Http\\Controllers\\AsignacionController::obte_supe_con_id_etap",
+                "parameters": [
+                    {
+                        "name": "intIdEtapa",
+                        "in": "path",
+                        "description": "Ingrese el id etapa",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "5"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "intIdEtapa": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "intIdEtapa": "5"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "lista el colaboradores que tiene esa etapa"
+                    },
+                    "404": {
+                        "description": "No se encuentra el metodo"
+                    }
+                }
+            }
+        },
+        "/Asignaciones/public/index.php/most_filt_asig_grup": {
+            "post": {
+                "tags": [
+                    "Asignar grupo"
+                ],
+                "summary": "mostrar el filtro asignado al grupo",
+                "operationId": "App\\Http\\Controllers\\AsignarGrupoController::most_filt_asig_grup",
+                "parameters": [
+                    {
+                        "name": "v_intIdproy",
+                        "in": "path",
+                        "description": "ingrese el id del proyecto",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": "126"
+                    },
+                    {
+                        "name": "v_intIdTipoProducto",
+                        "in": "path",
+                        "description": "ingrese el id del tipo producto",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": "1"
+                    },
+                    {
+                        "name": "v_intIdPlanta",
+                        "in": "path",
+                        "description": "ingrese el id de la planta",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": "1"
+                    },
+                    {
+                        "name": "v_intIdZona",
+                        "in": "path",
+                        "description": "ingrese el id de la zona",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": "1"
+                    },
+                    {
+                        "name": "v_intIdTarea",
+                        "in": "path",
+                        "description": "ingrese el id de la tarea",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": "1"
+                    },
+                    {
+                        "name": "v_intIdPaque",
+                        "in": "path",
+                        "description": "ingrese el id del paquete",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": "1"
+                    },
+                    {
+                        "name": "v_intIdEstado",
+                        "in": "path",
+                        "description": "ingrese el id del estado",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": "4"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "v_intIdproy": {
+                                        "type": "integer"
+                                    },
+                                    "v_intIdTipoProducto": {
+                                        "type": "integer"
+                                    },
+                                    "v_intIdPlanta": {
+                                        "type": "integer"
+                                    },
+                                    "v_intIdTarea": {
+                                        "type": "integer"
+                                    },
+                                    "v_intIdPaque": {
+                                        "type": "integer"
+                                    },
+                                    "v_intIdEstado": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "v_intIdproy": "126",
+                                    "v_intIdTipoProducto": "1",
+                                    "v_intIdPlanta": "1",
+                                    "v_intIdZona": "1",
+                                    "v_intIdTarea": "1",
+                                    "v_intIdPaque": "1",
+                                    "v_intIdEstado": "4"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "muestra el filtro segunla asignacion de grupo."
+                    },
+                    "404": {
+                        "description": "No se encuentra el metodo"
+                    }
+                }
+            }
+        },
+        "/Asignaciones/public/index.php/sele_los_codi_paqu_gril": {
+            "post": {
+                "tags": [
+                    "Asignar grupo"
+                ],
+                "summary": "Selecciona los codigos del paquete seleccionado en la grilla",
+                "operationId": "App\\Http\\Controllers\\AsignarGrupoController::sele_los_codi_paqu_gril",
+                "parameters": [
+                    {
+                        "name": "v_intIdProyPaquete",
+                        "in": "path",
+                        "description": "ingrese el id del paquete",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "v_intIdProyPaquete": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "v_intIdProyPaquete": "1"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Selecciona los codigos del paquete seleccionado"
+                    },
+                    "404": {
+                        "description": "No se encuentra el metodo"
+                    }
+                }
+            }
+        },
+        "/Asignaciones/public/index.php/sele_los_codi_paqu_camp": {
+            "post": {
+                "tags": [
+                    "Asignar grupo"
+                ],
+                "summary": "Selecciona los codigos del paquete seleccionado en el campo",
+                "operationId": "App\\Http\\Controllers\\AsignarGrupoController::sele_los_codi_paqu_camp",
+                "parameters": [
+                    {
+                        "name": "v_intIdProyPaquete",
+                        "in": "path",
+                        "description": "ingrese el id del paquete",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "v_intIdProyPaquete": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "v_intIdProyPaquete": "1"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Selecciona los codigos del paquete seleccionado"
+                    },
+                    "404": {
+                        "description": "No se encuentra el metodo"
+                    }
+                }
+            }
+        },
+        "/Asignaciones/public/index.php/guar_asig_grupo": {
+            "post": {
+                "tags": [
+                    "Asignar grupo"
+                ],
+                "summary": "Guardar la asignacion de grupo",
+                "operationId": "App\\Http\\Controllers\\AsignarGrupoController::guar_asig_grupo",
+                "parameters": [
+                    {
+                        "name": "v_intIdproy",
+                        "in": "path",
+                        "description": "ingrese el id del proyecto",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "126"
+                    },
+                    {
+                        "name": "v_intIdTipoProducto",
+                        "in": "path",
+                        "description": "ingrese el id del tipo producto",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "1023"
+                    },
+                    {
+                        "name": "v_intIdPaque",
+                        "in": "path",
+                        "description": "ingrese el id del paquete",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "120"
+                    },
+                    {
+                        "name": "v_intIdArmad",
+                        "in": "path",
+                        "description": "ingrese el id del armador",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "80"
+                    },
+                    {
+                        "name": "v_dttFeInici",
+                        "in": "path",
+                        "description": "ingrese la fecha de inicio",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "2019-10-21"
+                    },
+                    {
+                        "name": "v_dttFeFin",
+                        "in": "path",
+                        "description": "ingrese la fecha final",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "2019-10-29"
+                    },
+                    {
+                        "name": "v_Usuario",
+                        "in": "path",
+                        "description": "ingrese el usuario realiza el procesos",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "usuarios_usuarios"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "v_intIdproy": {
+                                        "type": "string"
+                                    },
+                                    "v_intIdTipoProducto": {
+                                        "type": "string"
+                                    },
+                                    "v_intIdPaque": {
+                                        "type": "string"
+                                    },
+                                    "v_intIdArmad": {
+                                        "type": "string"
+                                    },
+                                    "v_dttFeInici": {
+                                        "type": "string"
+                                    },
+                                    "v_dttFeFin": {
+                                        "type": "string"
+                                    },
+                                    "v_Usuario": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "v_intIdproy": "126",
+                                    "v_intIdTipoProducto": "1023",
+                                    "v_intIdPaque": "120",
+                                    "v_intIdArmad": "80",
+                                    "v_dttFeInici": "2019-10-21",
+                                    "v_dttFeFin": "2019-10-29",
+                                    "v_Usuario": "suarios_usuarios"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Guarda la asignacion del grupo"
+                    },
+                    "407": {
+                        "description": "El Documento de identidad ingresado no se encuentra registrado."
+                    },
+                    "404": {
+                        "description": "No se encuentra el metodo"
+                    }
+                }
+            }
+        },
+        "/Asignaciones/public/index.php/vali_ante_edit": {
+            "post": {
+                "tags": [
+                    "Asignar grupo"
+                ],
+                "summary": "validar antes  editar",
+                "operationId": "App\\Http\\Controllers\\AsignarGrupoController::vali_ante_edit",
+                "parameters": [
+                    {
+                        "name": "v_intIdproy",
+                        "in": "path",
+                        "description": "Ingrese el id del proyecto",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "126"
+                    },
+                    {
+                        "name": "v_intIdTipoProducto",
+                        "in": "path",
+                        "description": "ingrese el id del tipo producto",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "1"
+                    },
+                    {
+                        "name": "v_intIdPaque",
+                        "in": "path",
+                        "description": "ingrese el id del paquete",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "133"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "v_intIdproy": {
+                                        "type": "string"
+                                    },
+                                    "v_intIdTipoProducto": {
+                                        "type": "string"
+                                    },
+                                    "v_intIdPaque": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "v_intIdproy": "126",
+                                    "v_intIdTipoProducto": "1",
+                                    "v_intIdPaque": "133"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "valida ante de editar"
+                    },
+                    "404": {
+                        "description": "No se encuentra el metodo"
+                    }
+                }
+            }
+        },
+        "/Asignaciones/public/index.php/esta_paqu": {
+            "get": {
+                "tags": [
+                    "Asignar grupo"
+                ],
+                "summary": "lista los estados del paquete",
+                "operationId": "App\\Http\\Controllers\\AsignarGrupoController::esta_paqu",
+                "responses": {
+                    "200": {
+                        "description": "lista los estados del paquete"
+                    }
+                }
+            }
+        },
+        "/Asignaciones/public/index.php/vali_plan_id_etap": {
+            "post": {
+                "tags": [
+                    "Asignar grupo"
+                ],
+                "summary": "valida el plan del id etapa",
+                "operationId": "App\\Http\\Controllers\\AsignarGrupoController::vali_plan_id_etap",
+                "parameters": [
+                    {
+                        "name": "intIdEtapa",
+                        "in": "path",
+                        "description": "ingrese el id de la etapa",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "intIdEtapa": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "intIdEtapa": "1"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "valida el planta del id etapa"
+                    },
+                    "404": {
+                        "description": "No se encuentra el metodo"
+                    }
+                }
+            }
+        },
+        "/Asignaciones/public/index.php/vali_arma_id_etap": {
+            "post": {
+                "tags": [
+                    "Asignar grupo"
+                ],
+                "summary": "valida armador id etapa",
+                "operationId": "App\\Http\\Controllers\\AsignarGrupoController::vali_arma_id_etap",
+                "parameters": [
+                    {
+                        "name": "intIdEtapa",
+                        "in": "path",
+                        "description": "ingrese el id de la etapa",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "intIdEtapa": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "intIdEtapa": "1"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "valida el armador del id etapa"
+                    },
+                    "404": {
+                        "description": "No se encuentra el metodo"
+                    }
+                }
+            }
+        },
+        "/Asignaciones/public/index.php/vali_cont_id_arma": {
+            "post": {
+                "tags": [
+                    "Asignar grupo"
+                ],
+                "summary": "valida armador id etapa",
+                "operationId": "App\\Http\\Controllers\\AsignarGrupoController::vali_cont_id_arma",
+                "parameters": [
+                    {
+                        "name": "intIdArmadores",
+                        "in": "path",
+                        "description": "Ingrese el id del armador",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "intIdArmadores": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "intIdArmadores": "1"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "valida el armador del id etapa"
+                    },
+                    "404": {
+                        "description": "No se encuentra el metodo"
+                    }
+                }
+            }
+        },
+        "/Asignaciones/public/index.php/vali_arma_con_proy_paqu": {
+            "post": {
+                "tags": [
+                    "Asignar grupo"
+                ],
+                "summary": "valida el armador con periodo paquete",
+                "operationId": "App\\Http\\Controllers\\AsignarGrupoController::vali_arma_con_proy_paqu",
+                "parameters": [
+                    {
+                        "name": "intIdProyPaquete",
+                        "in": "path",
+                        "description": "Ingrese el id del armador",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "intIdProyPaquete": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "intIdProyPaquete": "1"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "valida arma con proyecto pauqte"
+                    },
+                    "404": {
+                        "description": "No se encuentra el metodo"
+                    }
+                }
+            }
+        },
+        "/Asignaciones/public/index.php/visu_repo_comp": {
+            "post": {
+                "tags": [
+                    "Asignar grupo"
+                ],
+                "summary": "visualizar reporte campo",
+                "operationId": "App\\Http\\Controllers\\AsignarGrupoController::visu_repo_comp",
+                "parameters": [
+                    {
+                        "name": "v_intIdProy",
+                        "in": "path",
+                        "description": "ingrese el id del proyecto",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "126"
+                    },
+                    {
+                        "name": "v_intIdTipoProducto",
+                        "in": "path",
+                        "description": "ingrese el id del proyecto",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "1"
+                    },
+                    {
+                        "name": "v_intIdProyPaquete",
+                        "in": "path",
+                        "description": "ingrese el id del proyecto",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "69"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "v_intIdProy": {
+                                        "type": "string"
+                                    },
+                                    "v_intIdTipoProducto": {
+                                        "type": "string"
+                                    },
+                                    "v_intIdProyPaquete": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "v_intIdProy": "126",
+                                    "v_intIdTipoProducto": "1",
+                                    "v_intIdProyPaquete": "69"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "visualizar el reporte  de los campos"
+                    },
+                    "404": {
+                        "description": "No se encuentra el metodo"
+                    }
+                }
+            }
+        },
+        "/Asignaciones/public/index.php/store_list_codi_grup_sele_visu_plan": {
+            "post": {
+                "tags": [
+                    "Asignar grupo"
+                ],
+                "summary": "listar los códigos del grupo seleccionado para visualizar los planos",
+                "operationId": "App\\Http\\Controllers\\AsignarGrupoController::store_list_codi_grup_sele_visu_plan",
+                "parameters": [
+                    {
+                        "name": "intIdProyPaquete",
+                        "in": "path",
+                        "description": "Ingrese el id del paquete",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "intIdProyPaquete": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "intIdProyPaquete": "1"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Este store listar los códigos del grupo seleccionado para visualizar los planos"
+                    },
+                    "404": {
+                        "description": "No se encuentra el metodo"
+                    }
+                }
+            }
+        },
+        "/Asignaciones/public/index.php/repo_avance_serie": {
+            "post": {
+                "tags": [
+                    "Reporte avance"
+                ],
+                "summary": "",
+                "operationId": "App\\Http\\Controllers\\ReportarAvanceController::repo_avance_serie",
+                "parameters": [
+                    {
+                        "name": "intIdProy",
+                        "in": "path",
+                        "description": "Ingrese el id del proyecto",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "126"
+                    },
+                    {
+                        "name": "intIdTipoProducto",
+                        "in": "path",
+                        "description": "Ingrese el id del tipo producto",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "1"
+                    },
+                    {
+                        "name": "varCodiElemento",
+                        "in": "path",
+                        "description": "Ingrese el codigo del elemento",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "TB-1"
+                    },
+                    {
+                        "name": "intIdProyPaquete",
+                        "in": "path",
+                        "description": "Ingrese el id del proyecto paquete",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "1"
+                    },
+                    {
+                        "name": "intIdRuta",
+                        "in": "path",
+                        "description": "Ingrese el id de la ruta",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "2"
+                    },
+                    {
+                        "name": "intIdEtapaAnte",
+                        "in": "path",
+                        "description": "ingrese el id etapa anterior",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "2"
+                    },
+                    {
+                        "name": "intIdEtapaSiguiente",
+                        "in": "path",
+                        "description": "ingrese el id etapa siguiente",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "7"
+                    },
+                    {
+                        "name": "intIdProyTarea",
+                        "in": "path",
+                        "description": "ingrese el idproyecto tarea",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "3"
+                    },
+                    {
+                        "name": "intIdProyZona",
+                        "in": "path",
+                        "description": "ingrese el idproyecto zona",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "3"
+                    },
+                    {
+                        "name": "intRevision",
+                        "in": "path",
+                        "description": "ingrese el la revision",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "3"
+                    },
+                    {
+                        "name": "intIdEtapa",
+                        "in": "path",
+                        "description": "ingrese el id etapa",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "5"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "intIdProy": {
+                                        "type": "string"
+                                    },
+                                    "intIdTipoProducto": {
+                                        "type": "string"
+                                    },
+                                    "varCodiElemento": {
+                                        "type": "string"
+                                    },
+                                    "intIdProyPaquete": {
+                                        "type": "string"
+                                    },
+                                    "intIdRuta": {
+                                        "type": "string"
+                                    },
+                                    "intIdEtapaAnte": {
+                                        "type": "string"
+                                    },
+                                    "intIdEtapaSiguiente": {
+                                        "type": "string"
+                                    },
+                                    "intIdProyTarea": {
+                                        "type": "string"
+                                    },
+                                    "intIdProyZona": {
+                                        "type": "string"
+                                    },
+                                    "intRevision": {
+                                        "type": "string"
+                                    },
+                                    "intIdEtapa": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "intIdProy": "126",
+                                    "intIdTipoProducto": "1",
+                                    "varCodiElemento": "TB-1",
+                                    "intIdProyPaquete": "1",
+                                    "intIdRuta": "2",
+                                    "intIdEtapaAnte": "2",
+                                    "intIdEtapaSiguiente": "7",
+                                    "intIdProyTarea": "3",
+                                    "intIdProyZona": "3",
+                                    "intRevision": "3",
+                                    "intIdEtapa": "5"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "informacion del avance de la serie"
+                    },
+                    "404": {
+                        "description": "No se encuentra el metodo"
+                    }
+                }
+            }
+        },
+        "/Asignaciones/public/index.php/store_regi_avance": {
+            "post": {
+                "tags": [
+                    "Reporte avance"
+                ],
+                "summary": "Permite registrar avance",
+                "operationId": "App\\Http\\Controllers\\ReportarAvanceController::store_regi_avance",
+                "parameters": [
+                    {
+                        "name": "v_intIdproy",
+                        "in": "path",
+                        "description": "Ingrese el id del proyecto",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "126"
+                    },
+                    {
+                        "name": "v_intIdTipoProducto",
+                        "in": "path",
+                        "description": "Ingrese el id del tipo producto",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "1"
+                    },
+                    {
+                        "name": "v_intIdEtapaActual",
+                        "in": "path",
+                        "description": "Ingrese el id de la etapa actual",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "4"
+                    },
+                    {
+                        "name": "v_varCodiElemento",
+                        "in": "path",
+                        "description": "Ingrese el elemente",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "TB-2"
+                    },
+                    {
+                        "name": "v_nCanti",
+                        "in": "path",
+                        "description": "Ingrese la cantidad",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "23"
+                    },
+                    {
+                        "name": "v_intIdContr",
+                        "in": "path",
+                        "description": "Ingrese el id del contratista",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "21"
+                    },
+                    {
+                        "name": "v_intNuConta",
+                        "in": "path",
+                        "description": "Ingrese el numero de contrata",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "32"
+                    },
+                    {
+                        "name": "v_intNuRevis",
+                        "in": "path",
+                        "description": "Ingrese el numero de revision",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "4"
+                    },
+                    {
+                        "name": "v_intIdSuper",
+                        "in": "path",
+                        "description": "Ingrese el id del supervisor",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "15"
+                    },
+                    {
+                        "name": "v_intIdProyZona",
+                        "in": "path",
+                        "description": "Ingrese el id proyecto zona",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "1"
+                    },
+                    {
+                        "name": "v_intIdProyTarea",
+                        "in": "path",
+                        "description": "Ingrese el id proyecto tarea",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "2"
+                    },
+                    {
+                        "name": "v_intIdProyPaquete",
+                        "in": "path",
+                        "description": "Ingrese el id proyecto paquete",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "3"
+                    },
+                    {
+                        "name": "v_intIdEtapaAnt",
+                        "in": "path",
+                        "description": "Ingrese el id etapa anterior",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "3"
+                    },
+                    {
+                        "name": "v_intIdEtapaSig",
+                        "in": "path",
+                        "description": "Ingrese el id etapa siguiente",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "5"
+                    },
+                    {
+                        "name": "v_strDeObser",
+                        "in": "path",
+                        "description": "Ingrese la observacion",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": ""
+                    },
+                    {
+                        "name": "v_intIdMaqui",
+                        "in": "path",
+                        "description": "Ingrese el id de la maquina",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "v_intIdPeriValo",
+                        "in": "path",
+                        "description": "Ingrese el id del periodo valorizacion",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "2"
+                    },
+                    {
+                        "name": "v_usuario",
+                        "in": "path",
+                        "description": "Ingrese el usuario que va realizar el proceso",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "usuario_usuario"
+                    },
+                    {
+                        "name": "v_intIdInspe",
+                        "in": "path",
+                        "description": "ingrese el id de la inspeccion",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "3"
+                    },
+                    {
+                        "name": "v_intIdRuta",
+                        "in": "path",
+                        "description": "ingrese el id de la ruta",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "5"
+                    },
+                    {
+                        "name": "v_varValoEtapa",
+                        "in": "path",
+                        "description": "ingrese el valor Etapa",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "SI"
+                    },
+                    {
+                        "name": "v_varCodiTipoEtap",
+                        "in": "path",
+                        "description": "ingrese el codigo de la etapa",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "SI"
+                    },
+                    {
+                        "name": "v_boolDesp",
+                        "in": "path",
+                        "description": "si va hacer despachado '1=si o 0=no'",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": ""
+                    },
+                    {
+                        "name": "v_intIdAsigEtapProy",
+                        "in": "path",
+                        "description": "ingrese el id de asignacion etapa",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "9"
+                    },
+                    {
+                        "name": "v_Series",
+                        "in": "path",
+                        "description": "ingrese el  la serie del elemento",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": ""
+                    },
+                    {
+                        "name": "v_strBulto",
+                        "in": "path",
+                        "description": "ingrese el bulto",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": ""
+                    },
+                    {
+                        "name": "v_varNumeroGuia",
+                        "in": "path",
+                        "description": "ingrese el numero de guia",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": ""
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "v_intIdproy": {
+                                        "type": "126"
+                                    },
+                                    "v_intIdTipoProducto": {
+                                        "type": "string"
+                                    },
+                                    "v_intIdEtapaActual": {
+                                        "type": "string"
+                                    },
+                                    "v_varCodiElemento": {
+                                        "type": "string"
+                                    },
+                                    "v_nCanti": {
+                                        "type": "string"
+                                    },
+                                    "v_intIdContr": {
+                                        "type": "string"
+                                    },
+                                    "v_intNuConta": {
+                                        "type": "string"
+                                    },
+                                    "v_intIdSuper": {
+                                        "type": "string"
+                                    },
+                                    "v_intIdProyZona": {
+                                        "type": "string"
+                                    },
+                                    "v_intIdProyTarea": {
+                                        "type": "string"
+                                    },
+                                    "v_intIdProyPaquete": {
+                                        "type": "string"
+                                    },
+                                    "v_intIdEtapaAnt": {
+                                        "type": "string"
+                                    },
+                                    "v_intIdEtapaSig": {
+                                        "type": "string"
+                                    },
+                                    "v_strDeObser": {
+                                        "type": "string"
+                                    },
+                                    "v_Series": {
+                                        "type": "string"
+                                    },
+                                    "v_strBulto": {
+                                        "type": "string"
+                                    },
+                                    "v_intIdPeriValo": {
+                                        "type": "string"
+                                    },
+                                    "v_usuario": {
+                                        "type": "string"
+                                    },
+                                    "v_intIdInspe": {
+                                        "type": "string"
+                                    },
+                                    "v_intIdRuta": {
+                                        "type": "string"
+                                    },
+                                    "v_varValoEtapa": {
+                                        "type": "string"
+                                    },
+                                    "v_varCodiTipoEtap": {
+                                        "type": "string"
+                                    },
+                                    "v_boolDesp": {
+                                        "type": "string"
+                                    },
+                                    "v_intIdAsigEtapProy": {
+                                        "type": "string"
+                                    },
+                                    "v_varNumeroGuia": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "v_intIdproy": "126",
+                                    "v_intIdTipoProducto": "1",
+                                    "v_intIdEtapaActual": "4",
+                                    "v_varCodiElemento": "TB-2",
+                                    "v_nCanti": "23",
+                                    "v_intIdContr": "21",
+                                    "v_intNuConta": "32",
+                                    "v_intNuRevis": "4",
+                                    "v_intIdSuper": "15",
+                                    "v_intIdProyZona": "1",
+                                    "v_intIdProyTarea": "2",
+                                    "v_intIdProyPaquete": "3",
+                                    "v_intIdEtapaAnt": "3",
+                                    "v_intIdEtapaSig": "5",
+                                    "v_intIdPeriValo": "2",
+                                    "v_usuario": "usuario_usuario",
+                                    "v_intIdInspe": "3",
+                                    "v_intIdRuta": "5",
+                                    "v_varValoEtapa": "SI",
+                                    "v_varCodiTipoEtap": "25",
+                                    "v_intIdAsigEtapProy": "9"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Registrar avance"
+                    },
+                    "201": {
+                        "description": "La tabla temporal esta vacía, comuniquese con Sistemas"
+                    },
+                    "404": {
+                        "description": "No se encuentra el metodo"
+                    }
+                }
+            }
+        },
+        "/Asignaciones/public/index.php/envi_valo_cod": {
+            "post": {
+                "tags": [
+                    "Reporte avance"
+                ],
+                "summary": "obtiene datos del usuario a través del dni",
+                "operationId": "App\\Http\\Controllers\\ReportarAvanceController::envi_valo_cod",
+                "parameters": [
+                    {
+                        "name": "intIdEtapa",
+                        "in": "path",
+                        "description": "ingrese el id etapa",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "1"
+                    },
+                    {
+                        "name": "intIdProy",
+                        "in": "path",
+                        "description": "ingrese el id etapa",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "126"
+                    },
+                    {
+                        "name": "intIdTipoProducto",
+                        "in": "path",
+                        "description": "ingrese el id del tipo producto",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "intIdEtapa": {
+                                        "type": "string"
+                                    },
+                                    "intIdTipoProducto": {
+                                        "type": "string"
+                                    },
+                                    "intIdProy": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "intIdEtapa": "1",
+                                    "intIdTipoProducto": "1",
+                                    "intIdProy": "126"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Enviar Codigo Tipo Etapa"
+                    },
+                    "407": {
+                        "description": "El Documento de identidad ingresado no se encuentra registrado."
+                    },
+                    "404": {
+                        "description": "No se encuentra el metodo"
+                    }
+                }
+            }
+        },
+        "/Asignaciones/public/index.php/store_camb_esta_proc_term": {
+            "post": {
+                "tags": [
+                    "Reporte avance"
+                ],
+                "summary": "cambio el estado del proceso a terminado",
+                "operationId": "App\\Http\\Controllers\\ReportarAvanceController::store_camb_esta_proc_term",
+                "parameters": [
+                    {
+                        "name": "v_intIdproy",
+                        "in": "path",
+                        "description": "Ingrese el id del proyecto",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "126"
+                    },
+                    {
+                        "name": "v_intIdTipoProducto",
+                        "in": "path",
+                        "description": "Ingrese el id tipo del producto",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "1"
+                    },
+                    {
+                        "name": "v_intIdPaque",
+                        "in": "path",
+                        "description": "Ingrese el id tipo del producto",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "1"
+                    },
+                    {
+                        "name": "v_usuario",
+                        "in": "path",
+                        "description": "Ingrese el usuario que va realizar el proceso",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "usuarios_usuario"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "v_intIdproy": {
+                                        "type": "string"
+                                    },
+                                    "v_intIdTipoProducto": {
+                                        "type": "string"
+                                    },
+                                    "v_intIdPaque": {
+                                        "type": "string"
+                                    },
+                                    "v_usuario": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "v_intIdproy": "126",
+                                    "v_intIdTipoProducto": "1",
+                                    "v_intIdPaque": "1",
+                                    "v_usuario": "usuarios_usuario"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Sin Mensaje"
+                    },
+                    "407": {
+                        "description": "El Documento de identidad ingresado no se encuentra registrado."
+                    },
+                    "404": {
+                        "description": "No se encuentra el metodo"
+                    }
+                }
+            }
+        },
+        "/Asignaciones/public/index.php/etapa_obte_cola": {
+            "post": {
+                "tags": [
+                    "Reporte avance"
+                ],
+                "summary": "permite obtener el colaborador mediante el idetapa",
+                "operationId": "App\\Http\\Controllers\\ReportarAvanceController::etapa_obte_cola",
+                "parameters": [
+                    {
+                        "name": "intIdEtapa",
+                        "in": "path",
+                        "description": "Ingrese el idEtapa",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "intIdEtapa": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "intIdEtapa": "1"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": " obtener el colaborador mediante el idetapa"
+                    },
+                    "404": {
+                        "description": "No se encuentra el metodo"
+                    }
+                }
+            }
+        },
+        "/Asignaciones/public/index.php/etapa_obte_cont": {
+            "post": {
+                "tags": [
+                    "Reporte avance"
+                ],
+                "summary": "permite obtener le contratista mediante el idetapa",
+                "operationId": "App\\Http\\Controllers\\ReportarAvanceController::etapa_obte_cont",
+                "parameters": [
+                    {
+                        "name": "intIdTipoEtap",
+                        "in": "path",
+                        "description": "Ingrese el id del tipo etapa",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "intIdTipoEtap": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "intIdTipoEtap": "1"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": " obtener el colaborador mediante el idetapa"
+                    },
+                    "404": {
+                        "description": "No se encuentra el metodo"
+                    }
+                }
+            }
+        },
+        "/Asignaciones/public/index.php/store_obte_peri_valo": {
+            "post": {
+                "tags": [
+                    "Reporte avance"
+                ],
+                "summary": "obtener periodo valorizacion",
+                "operationId": "App\\Http\\Controllers\\ReportarAvanceController::store_obte_peri_valo",
+                "parameters": [
+                    {
+                        "name": "acti_usua",
+                        "in": "path",
+                        "description": "Ingrese el id del tipo etapa",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "andy_ancajima"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "acti_usua": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "acti_usua": "andy_ancajima"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": " obtener el colaborador mediante el idetapa"
+                    },
+                    "404": {
+                        "description": "No se encuentra el metodo"
+                    }
+                }
+            }
+        },
+        "/Asignaciones/public/index.php/conv_store_en_micro": {
+            "post": {
+                "tags": [
+                    "Store Grupo"
+                ],
+                "summary": "convertir de store en microservicios",
+                "operationId": "App\\Http\\Controllers\\StoreGrupoController::conv_store_en_micro",
+                "parameters": [
+                    {
+                        "name": "intIdProy",
+                        "in": "path",
+                        "description": "ingrese el id proyectos",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "126"
+                    },
+                    {
+                        "name": "intIdTipoProducto",
+                        "in": "path",
+                        "description": "Ingrese el id tipo producto",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "1"
+                    },
+                    {
+                        "name": "intIdProyPaquete",
+                        "in": "path",
+                        "description": "Ingrese el id proyecto paquete",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "125"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "varNumeDni": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "intIdProy": "126",
+                                    "intIdTipoProducto": "1",
+                                    "intIdProyPaquete": "125"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Sin Mensaje"
+                    },
+                    "407": {
+                        "description": "El Documento de identidad ingresado no se encuentra registrado."
+                    },
+                    "404": {
+                        "description": "No se encuentra el metodo"
+                    }
+                }
+            }
+        },
+        "/Asignaciones/public/index.php/store_avan": {
+            "post": {
+                "tags": [
+                    "Store Grupo"
+                ],
+                "summary": "store de avance",
+                "operationId": "App\\Http\\Controllers\\StoreGrupoController::store_avan",
+                "parameters": [
+                    {
+                        "name": "v_intIdproy",
+                        "in": "path",
+                        "description": "ingresar el id del proyecto",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "126"
+                    },
+                    {
+                        "name": "v_intIdTipoProducto",
+                        "in": "path",
+                        "description": "ingresar el id tipo producto",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "1"
+                    },
+                    {
+                        "name": "v_intIdZona",
+                        "in": "path",
+                        "description": "ingrese el id de la zona",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "112"
+                    },
+                    {
+                        "name": "v_intIdTarea",
+                        "in": "path",
+                        "description": "ingrese el id de la zona",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "10"
+                    },
+                    {
+                        "name": "v_intIdEtapa",
+                        "in": "path",
+                        "description": "ingrese el id etapa",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "4"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "v_intIdproy": {
+                                        "type": "string"
+                                    },
+                                    "v_intIdTipoProducto": {
+                                        "type": "string"
+                                    },
+                                    "v_intIdZona": {
+                                        "type": "string"
+                                    },
+                                    "v_intIdTarea": {
+                                        "type": "string"
+                                    },
+                                    "v_intIdEtapa": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "v_intIdproy": "126",
+                                    "v_intIdTipoProducto": "1",
+                                    "v_intIdZona": "112",
+                                    "v_intIdTarea": "10",
+                                    "v_intIdEtapa": "4"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "store de avance"
+                    },
+                    "407": {
+                        "description": "El Documento de identidad ingresado no se encuentra registrado."
+                    },
+                    "404": {
+                        "description": "No se encuentra el metodo"
+                    }
+                }
+            }
+        }
+    }
+}
